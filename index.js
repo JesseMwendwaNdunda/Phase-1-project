@@ -23,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
     })
 
+    //toggling the form display
+    toggleFormBtn.addEventListener("click",()=>{
+        showForm =! showForm
+        formContainer.style.display =showForm? "block" :"none"
+    })
+
 
 
 
