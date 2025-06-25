@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: o;
+    padding: 0;
+    background: khaki;
+}
+
+#artHeader{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.container{
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color:white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+form input, form textarea{
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.centre{
+    text-align: center;
+    
+}
+
+#artCollection {
+    display: flex;
+}
