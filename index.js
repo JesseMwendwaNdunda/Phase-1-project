@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     })
     .catch((err)=>console.error("Failed to fetch desired artworks:",err))
 
+    //submiting new art
+    const artForm = document.getElementsByClassName("addArtForm")
+    artForm.addEventListener("submit", (e)=>{
+        e.preventDefault()
+    })
+
 
 
 
