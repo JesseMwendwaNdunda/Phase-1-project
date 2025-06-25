@@ -1,47 +1,123 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: o;
-    padding: 0;
-    background: khaki;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf2af;
+  margin: 0;
+  padding: 0;
 }
 
-#artHeader{
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 2rem;
+#artHeader {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
-.container{
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color:white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: center;
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form input, form textarea{
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+form input,
+form textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-input[type="submit"] {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
+form input[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
 }
 
-.centre{
-    text-align: center;
-    
+form input[type="submit"]:hover {
+  background-color: #333;
+}
+
+.centre {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 #artCollection {
-    display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.card h4 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.likeBtn {
+  margin-top: 0.7rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #ff3385;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.likeBtn:hover {
+  background-color: #e6006b;
+}
+
+
+.artImage {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.artImage:hover {
+  transform: scale(1.02);
+}
+
+.artDetails {
+  text-align: left;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
 }
