@@ -29,6 +29,14 @@ document.addEventListener("DOMContentLoaded", () =>{
         formContainer.style.display =showForm? "block" :"none"
     })
 
+    //fetch artworks and render the artworks
+    fetch("http://localhost:3000/artworks")
+    .then((res)=>res.json)
+    .then((artworks)=>{
+        artworks.forEach(renderArtwork)
+    })
+    .catch((err)=>console.error("Failed to fetch desired artworks:",err))
+
 
 
 
