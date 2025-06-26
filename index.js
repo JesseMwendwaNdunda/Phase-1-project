@@ -85,6 +85,22 @@ document.addEventListener("DOMContentLoaded", () =>{
          <button class="likeBtn" id="art-${art.id}">Like ❤️</button>`
     }
 
+    // Open modal with artwork details
+    card.addEventListener("click", (e) => {
+      if (e.target.classList.contains("likeBtn")) return;
+
+      document.getElementById("modalTitle").textContent = art.title;
+      document.getElementById("modalArtist").textContent = `by ${art.artist}`;
+      const modalImage = document.getElementById("modalImage");
+      modalImage.src = art.image;
+      modalImage.alt = art.title;
+      document.getElementById("modalDescription").textContent = art.description;
+      document.getElementById("modalLikes").textContent = art.likes;
+
+      modal.style.display = "flex";
+    });
+
+
 
 
 
