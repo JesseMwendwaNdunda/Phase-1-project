@@ -113,6 +113,11 @@ document.addEventListener("DOMContentLoaded", () =>{
         },
         body: JSON.stringify({ likes: newLikes }),
       })
+        .then((res) => res.json())
+        .then((updatedArt) => {
+           art.likes = updatedArt.likes;
+           card.querySelector("p strong").textContent = updatedArt.likes;
+        })
 
 
 
