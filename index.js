@@ -43,6 +43,47 @@ document.addEventListener("DOMContentLoaded", () =>{
         e.preventDefault()
     })
 
+    const title=e.target.title.value.trim()
+    const artist =e.target.artist.value.trim()
+    const image = e.target.description.value.trim()
+
+    if (!title || !artist || !image){
+        alert("PLease fill out your art on all the required fields.")
+        return
+    }
+
+    const newArt = {title, artist,image,description,likes:0}
+
+    fetch("http://localhost:3000/artworks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(newArt),
+    })
+      .then((res) => res.json())
+      .then((art) => {
+        renderArtwork(art);
+        artForm.reset();
+      })
+      .catch((err) => console.error("Error submitting artwork:", err));
+    });
+
+    //render a single artwork card
+    function renderArtwork(art){
+        const card=document.createElement("div")
+        card.className = "card"
+        card.style.cursor="pointer"
+
+        card.innerHTML =`
+         <h2>${art.title}</h2>
+         <h4>by ${art.artist}</h4>
+         <img src="${art.image}" alt="${art.title}" />
+         <p>${art.description}</p>
+         <p><strong>${art.likes}</strong> Likes</p>
+         <button class="likeBtn" id="art-${art.id}">Like ❤️</button>`
+    }
 
 
 
