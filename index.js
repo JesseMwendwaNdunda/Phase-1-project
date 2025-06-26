@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Fetch artworks and render
-  fetch("http://localhost:3000/artworks")
+  fetch("https://phase-1-project-wuya.onrender.com/artworks")
     .then((res) => res.json())
     .then((artworks) => {
       artworks.forEach(renderArtwork);
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const newArt = { title, artist, image, description, likes: 0 };
 
-    fetch("http://localhost:3000/artworks", {
+    fetch("https://phase-1-project-wuya.onrender.com/artworks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     likeBtn.addEventListener("click", () => {
       const newLikes = art.likes + 1;
 
-      fetch(`http://localhost:3000/artworks/${art.id}`, {
+      fetch(`https://phase-1-project-wuya.onrender.com/artworks${art.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
