@@ -100,6 +100,20 @@ document.addEventListener("DOMContentLoaded", () =>{
       modal.style.display = "flex";
     });
 
+    // Making my like button functional
+    const likeBtn = card.querySelector(".likeBtn");
+    likeBtn.addEventListener("click", () => {
+      const newLikes = art.likes + 1;
+
+      fetch(`http://localhost:3000/artworks/${art.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ likes: newLikes }),
+      })
+
 
 
 
