@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     likeBtn.addEventListener("click", () => {
       const newLikes = art.likes + 1;
 
-      fetch(`https://phase-1-project-wuya.onrender.com/artworks${art.id}`, {
+      fetch(`https://phase-1-project-wuya.onrender.com/artworks/${art.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
